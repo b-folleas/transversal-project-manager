@@ -2,16 +2,16 @@ package fr.dreamteam.manager.model;
 
 public class MapItem {
 
-    private Long id;
+    private int id;
     private int posx;
     private int posy;
     private Ground ground;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -37,5 +37,19 @@ public class MapItem {
 
     public void setGround(Ground ground) {
         this.ground = ground;
+    }
+
+    @Override
+    public String toString() {
+        return "MapItem{" +
+                "id=" + id +
+                ", posx=" + posx +
+                ", posy=" + posy +
+                ", ground=" + ground +
+                '}';
+    }
+
+    public int getDistance(MapItem mapItem) {
+        return Math.abs(this.posx - mapItem.posx) + Math.abs(this.posy * mapItem.posy);
     }
 }

@@ -2,16 +2,16 @@ package fr.dreamteam.manager.model;
 
 public class Incident {
 
-    private Long id;
+    private int id;
     private MapItem mapItem;
     private float intensity;
     private IncidentType incidentType;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -37,5 +37,15 @@ public class Incident {
 
     public void setIncidentType(IncidentType incidentType) {
         this.incidentType = incidentType;
+    }
+
+    @Override
+    public String toString() {
+        return "Incident{" +
+                "id=" + id +
+                ", mapItem=" + mapItem +
+                ", intensity=" + intensity +
+                ", incidentType=" + incidentType +
+                '}';
     }
 }

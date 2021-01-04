@@ -12,6 +12,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 
 @Component
 public class ManagerRunner {
@@ -46,9 +47,9 @@ public class ManagerRunner {
             logger.info("Traitement de l'incident : " + i);
             truckToAdministrate = this.truckAdministrateur.getTruckForIncident(i, trucks);
 
-            truckToAdministrate.forEach(t -> {
+            truckToAdministrate.stream().filter(Objects::nonNull).forEach(t -> {
                 logger.info("Associe le truck : " + t + " avec l'incident : " + i);
-                this.truckRepository.saveTruck(t.linkToIncident(i));
+                this.truckRepository.linkToIncident(t, i);
             });
         }
     }

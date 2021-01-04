@@ -60,17 +60,6 @@ public abstract class BaseRepository<T> {
                 .block();
     }
 
-    public T postItem(String url, T t) {
-        logger.info("HTTP Post for item at the url : " + url);
-        return this.webClient
-                .post()
-                .uri(url)
-                .body(Mono.just(t), this.getClassObject())
-                .retrieve()
-                .bodyToMono(this.getClassObject())
-                .block();
-    }
-
     /**
      * Get the Class lt;Tgt; object
      *

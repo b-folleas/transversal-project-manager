@@ -1,5 +1,7 @@
 package fr.dreamteam.manager.model;
 
+import java.util.List;
+
 public class Truck {
 
     private int id;
@@ -7,6 +9,7 @@ public class Truck {
     private Barrack barrack;
     private boolean availability;
     private int matricule;
+    private List<Incident> incidents;
 
     public int getId() {
         return id;
@@ -48,9 +51,16 @@ public class Truck {
         this.matricule = matricule;
     }
 
-    public Truck linkToIncident(Incident incident) {
-        // TODO ajouter le lien entre truck et incident
+    public List<Incident> getIncidents() {
+        return incidents;
+    }
 
+    public void setIncidents(List<Incident> incidents) {
+        this.incidents = incidents;
+    }
+
+    public Truck linkToIncident(Incident incident) {
+        this.incidents.add(incident);
         // Lorsqu'un truck doit s'occuper d'un incident il n'est plus disponible
         this.availability = false;
         return this;

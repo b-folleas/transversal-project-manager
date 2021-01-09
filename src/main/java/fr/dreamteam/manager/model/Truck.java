@@ -4,18 +4,18 @@ import java.util.List;
 
 public class Truck {
 
-    private int id;
+    private Long id;
     private MapItem mapItem;
     private Barrack barrack;
     private boolean availability;
     private int matricule;
     private List<Incident> incidents;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

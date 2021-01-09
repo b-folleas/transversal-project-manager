@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ITruckAdministrateur {
 
-    public List<Truck> getTruckForIncident(Incident incident, List<Truck> trucks);
+    List<Truck> getTruckForIncident(Incident incident, List<Truck> trucks);
 
 }

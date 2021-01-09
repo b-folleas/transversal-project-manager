@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IIncidentRepository {
 
-    public List<Incident> getIncidents();
+    List<Incident> getIncidents();
 
 }

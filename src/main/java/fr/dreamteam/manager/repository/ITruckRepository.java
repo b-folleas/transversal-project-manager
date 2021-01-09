@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface ITruckRepository {
 
-    public List<Truck> getTrucks();
+    List<Truck> getTrucks();
 
-    public void linkToIncident(Truck truck, Incident incident);
+    void linkToIncident(Truck truck, Incident incident);
 
 }

@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface IIncidentToProcess {
 
-    public List<Incident> getIncidentsToProcess(List<Incident> incidents, List<Truck> trucks);
+    List<Incident> getIncidentsToProcess(List<Incident> incidents, List<Truck> trucks);
 
 }
